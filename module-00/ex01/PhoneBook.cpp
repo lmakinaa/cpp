@@ -6,14 +6,15 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:31:14 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/04 20:34:54 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/04 23:32:55 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
-{}
+{
+}
 
 void PhoneBook::runPhoneBook()
 {
@@ -35,6 +36,7 @@ void PhoneBook::runPhoneBook()
 void PhoneBook::addCommand()
 {
 	// what should the user enter.
+	int	i;
 	int phase = 0;
 
 	while (phase != 5)
@@ -44,28 +46,28 @@ void PhoneBook::addCommand()
 			case 0:
 				std::cout << "Enter first name: " << std::flush;
 				std::cin >> m_firstName;
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				phase = 1;
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max());
 				break ;
 			case 1:
 				std::cout << "Enter last name: " << std::flush;
 				std::cin >> m_lastName;
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				phase = 2;
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max());
 				break ;
 			case 2:
 				std::cout << "Enter nickname: " << std::flush;
 				std::cin >> m_nickname;
 				phase = 3;
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max());
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				break ;
 			case 3:
 				std::cout << "Enter phone number: " << std::flush;
 				std::getline(std::cin, m_phoneNum);
-				int	i = 0;
-				while (m_phoneNum[i] && !isdigit(m_phoneNum[i]))
+				i = 0;
+				while (m_phoneNum[i] && isdigit(m_phoneNum[i]))
 					i++;
-				if (m_phoneNum[i] == '\0')
+				if (m_phoneNum[i] == '\0' && i != 0)
 					phase = 4;
 				break ;
 			case 4:

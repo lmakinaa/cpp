@@ -6,11 +6,15 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:37:51 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/04 20:32:13 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/04 23:06:47 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+Contact::Contact()
+{	
+}
 
 Contact::Contact(std::string firstName,
 				 std::string lastName,
