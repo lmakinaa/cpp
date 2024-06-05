@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:02:31 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 23:58:20 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/06 00:07:23 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Account::Account(int initial_deposit)
 
 Account::~Account()
 {
+	_nbAccounts--;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed\n";
 }
@@ -59,7 +60,7 @@ bool Account::makeWithdrawal(int withdrawal)
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:" 
 			  << withdrawal;
-	if (withdrawal > _amount)
+	if (withdrawal > checkAmount())
 	{
 		std::cout << ";refused\n";
 		return (false);
