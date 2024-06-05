@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:39:26 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 15:53:57 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 17:42:08 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ private:
 
 public:
 	Contact();
+	~Contact();
 	void setInfo(std::string firstName,
 				 std::string lastName,
 				 std::string nickName,

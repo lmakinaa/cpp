@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:37:51 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 15:54:12 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 17:42:19 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 Contact::Contact()
 {
 	m_index = -1;
+}
+
+Contact::~Contact()
+{
 }
 
 void Contact::setInfo(std::string firstName,

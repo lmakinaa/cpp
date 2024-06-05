@@ -6,13 +6,18 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:31:14 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 15:54:35 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 17:42:38 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
+{
+	m_empty = true;
+}
+
+PhoneBook::~PhoneBook()
 {
 	m_empty = true;
 }

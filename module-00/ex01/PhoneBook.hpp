@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:40:30 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 13:02:08 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 17:42:45 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ private:
 
 public:
 	PhoneBook();
+	~PhoneBook();
 	void addCommand();
 	void searchCommand();
 	void runPhoneBook();
