@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:31:14 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 11:21:51 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 11:46:55 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void PhoneBook::runPhoneBook()
 			addCommand();
 		else if (line.compare("SEARCH") == 0)
 			searchCommand();
-		//else if (line.compare("EXIT") == 0)
-			//exitCommand();
+		else if (line.compare("EXIT") == 0)
+			break ;
 	}
 }
 
@@ -71,22 +71,26 @@ void PhoneBook::addCommand()
 				break ;
 		}
 	}
-	contacts[index].print();
-	contacts[index] = Contact(m_firstName, m_nickname,  m_lastName, m_phoneNum, m_darkestSecret);
-	contacts[index].print();
+	contacts[index] = Contact(m_firstName,
+							  m_nickname,
+							  m_lastName,
+							  m_phoneNum,
+							  m_darkestSecret,
+							  index);
 	index = (index + 1 == 7) ? 0 : index + 1;
+	dumpContactList();
 }
 
 
 void PhoneBook::searchCommand()
 {
-	PhoneBook::dumpContactList();
+	dumpContactList();
 }
 
 void PhoneBook::dumpContactList()
 {
-	std::setw(10);
-	
+	for (int i = 0; i < index; i++)
+		contacts[i].print();
 }
 
 void PhoneBook::promptUser(const char *str, std::string& buffer)
