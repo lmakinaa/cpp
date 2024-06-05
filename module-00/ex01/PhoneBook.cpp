@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:31:14 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/04 23:32:55 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 10:55:09 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ void PhoneBook::addCommand()
 		}
 	}
 	contacts[index] = Contact(m_firstName, m_nickname,  m_lastName, m_phoneNum, m_darkestSecret);
+	contacts[index].print();
 	index++;
 	if (index == 8)
 		index = 0;
-	contacts[index].print();
 }
