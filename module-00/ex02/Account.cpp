@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:02:31 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 23:51:54 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 23:58:20 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ bool Account::makeWithdrawal(int withdrawal)
 			  << withdrawal;
 	if (withdrawal > _amount)
 	{
-		std::cout << "refused\n";
+		std::cout << ";refused\n";
 		return (false);
 	}
 	std::cout << withdrawal << ";amount:" << _amount + withdrawal << ";nb_withdrawals:" << _nbWithdrawals << '\n';
