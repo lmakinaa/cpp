@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:02:31 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/06 00:07:23 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/06 00:48:08 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include "Account.hpp"
 
+// why initialising here ?? and why not using static keyword here in this file ? and why const function member ?
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
