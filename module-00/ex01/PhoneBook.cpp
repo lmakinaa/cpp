@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:31:14 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 10:55:09 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 11:09:05 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ void PhoneBook::runPhoneBook()
 		//else if (line.compare("SEARCH") == 0)
 		//	searchCommand();
 		//else if (line.compare("EXIT") == 0)
-		//	exitCommand();
+			//exitCommand();
 	}
 }
 
+
 void PhoneBook::addCommand()
 {
-	// what should the user enter.
 	int	i;
 	int phase = 0;
 
@@ -44,22 +44,16 @@ void PhoneBook::addCommand()
 		switch(phase)
 		{
 			case 0:
-				std::cout << "Enter first name: " << std::flush;
-				std::cin >> m_firstName;
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				promptUser("first name", m_firstName);
 				phase = 1;
 				break ;
 			case 1:
-				std::cout << "Enter last name: " << std::flush;
-				std::cin >> m_lastName;
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				promptUser("last name", m_lastName);
 				phase = 2;
 				break ;
 			case 2:
-				std::cout << "Enter nickname: " << std::flush;
-				std::cin >> m_nickname;
+				promptUser("nickname", m_nickname);
 				phase = 3;
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				break ;
 			case 3:
 				std::cout << "Enter phone number: " << std::flush;
@@ -79,7 +73,12 @@ void PhoneBook::addCommand()
 	}
 	contacts[index] = Contact(m_firstName, m_nickname,  m_lastName, m_phoneNum, m_darkestSecret);
 	contacts[index].print();
-	index++;
-	if (index == 8)
-		index = 0;
+	index = (index + 1 == 7) ? 0 : index + 1;
+}
+
+void PhoneBook::promptUser(char *str, std::string& buffer)
+{
+	std::cout << "Enter " << str << ": " << std::flush;
+	std::cin >> buffer;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
