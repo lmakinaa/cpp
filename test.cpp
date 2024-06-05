@@ -15,7 +15,7 @@ public:
 		m_z = z;
 	}
 
-	void print()
+	void formatedPrint()
 	{
 		std::cout << '<' << m_x << ", " << m_y << ", " << m_z << '>';
 	}
@@ -46,10 +46,12 @@ public:
 #include <string>
 
 int main() {
-    std::string money;
+    //std::string money;
 	
-    std::cout << "Enter an amount of money: ";
-    std::cin >> (money);
-    std::cout << "You entered: " << money << std::endl;
+    //std::cout << "Enter an amount of money: ";
+    //std::cin >> (money);
+    //std::cout << "You entered: " << money << std::endl;
+ 	std::time_t	time = std::time(NULL);
+	std::cout << time;
     return 0;
 }
