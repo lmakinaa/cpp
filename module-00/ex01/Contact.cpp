@@ -6,14 +6,15 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:37:51 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 11:49:21 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 12:25:48 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact()
-{	
+{
+	m_index = -1;
 }
 
 Contact::Contact(std::string firstName,
@@ -31,7 +32,7 @@ Contact::Contact(std::string firstName,
 	m_index = index;
 }
 
-void Contact::print()
+void Contact::formatedPrint()
 {
 	std::cout << '|' << std::setw(10) << m_index;
 	putWord(m_firstName);
@@ -42,6 +43,20 @@ void Contact::print()
 	std::cout << '|' << std::endl;
 }
 
+void Contact::dumpInfo()
+{
+	if (m_index == -1)
+	{
+		std::cout << "There is no information to show for this contact." << std::endl;
+		return ;
+	}
+	std::cout << "First name: " << m_firstName << '\n';
+	std::cout << "Last name: " << m_lastName << '\n';
+	std::cout << "Nickname: " << m_nickname << '\n';
+	std::cout << "Phone number: " << m_phoneNum << '\n';
+	std::cout << "Darkest secret: " << m_darkestSecret << '\n';
+}
+
 void Contact::putWord(std::string& str)
 {
 	std::cout << '|';
@@ -49,6 +64,5 @@ void Contact::putWord(std::string& str)
 		std::cout << std::setw(10) << str.substr(0, 10) << '.';
 	else
 		std::cout << std::setw(10) << str;
-		
 }
 	
