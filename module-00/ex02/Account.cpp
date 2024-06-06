@@ -14,7 +14,6 @@
 #include <iostream>
 #include "Account.hpp"
 
-// why initialising here ?? and why not using static keyword here in this file ? and why const function member ?
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
