@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 17:38:53 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/06 20:38:28 by ijaija           ###   ########.fr       */
+/*   Created: 2024/06/06 20:50:10 by ijaija            #+#    #+#             */
+/*   Updated: 2024/06/07 16:22:04 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+/*
+* Defining in the body is assignement and defining after the (:) called initialisation
+* that is necessary to consts and refs
+*/
 
-Zombie* zombieHorde(int N, std::string& name)
+HumanA::HumanA(const char* name, Weapon& weapon)
+	: m_weapon (weapon)
+	, m_name (name)
 {
-	Zombie* res = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		res[i].setName(name);
-	return (res);
+}
+
+HumanA::~HumanA()
+{
+}
+
+void HumanA::attack()
+{
+	std::cout << m_name << " attacks with their " << m_weapon.getType() << '\n';
 }

@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:28:50 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/06 17:49:44 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/06 20:38:00 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void Zombie::announce()
 	std::cout << m_name << ": BraiiiiiiinnnzzzZ...\n";
 }
 
-void Zombie::setName(std::string name)
+void Zombie::setName(std::string& name)
 {
 	m_name = name;
 }
