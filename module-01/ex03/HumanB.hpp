@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 16:22:41 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/07 16:36:07 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/07 18:29:46 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "Weapon.hpp"
 #include <iostream>
+#include <string>
 
 /*
 * We use pointer here because ref should be initialized immmediatly, so
