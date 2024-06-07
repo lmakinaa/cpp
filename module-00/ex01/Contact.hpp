@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:39:26 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/04 20:31:33 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/04 23:06:30 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ private:
 	std::string m_darkestSecret;
 
 public:
+	Contact();
 	Contact(std::string firstName,
 			std::string lastName,
 			std::string nickName,
