@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:40:30 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/04 23:06:57 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 11:05:14 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ public:
 	//void searchCommand();
 	//void exitCommand();
 	void runPhoneBook();
+	void promptUser(char *str, std::string& buffer);
+	
 };
 
 #endif
