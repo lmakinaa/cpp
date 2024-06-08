@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 17:56:30 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/08 06:19:08 by ijaija           ###   ########.fr       */
+/*   Created: 2024/06/07 16:46:48 by ijaija            #+#    #+#             */
+/*   Updated: 2024/06/08 06:18:07 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "File.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-void f()
+#include <iostream>
+#include <string>
+
+class Harl
 {
-	system("lsof -c freplace");
-}
-//read all file
-int main(int ac, char **av)
-{
-	atexit(f);
-	if (ac != 4)
-	{
-		std::cout << "Usage: ./freplace <filename> <match string> <substitute>\n";
-		return 1;
-	}
-	File f(av[1]);
-	if (f.createReplaceFile(av[2], av[3]) == 1)
-		return (1);
-	return 0;
-}
+	
+public:
+	Harl();
+	~Harl();
+	void startComplaining(std::string& level);
+	void serieOfComplain(int c);
+	typedef void (Harl::*t_m_func) ();
+	
+private:
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
+};
+
+
+#endif
