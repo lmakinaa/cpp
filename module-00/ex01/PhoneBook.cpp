@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:31:14 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 11:09:05 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 11:21:51 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void PhoneBook::runPhoneBook()
 		std::getline(std::cin, line);
 		if (line.compare("ADD") == 0)
 			addCommand();
-		//else if (line.compare("SEARCH") == 0)
-		//	searchCommand();
+		else if (line.compare("SEARCH") == 0)
+			searchCommand();
 		//else if (line.compare("EXIT") == 0)
 			//exitCommand();
 	}
@@ -71,12 +71,25 @@ void PhoneBook::addCommand()
 				break ;
 		}
 	}
+	contacts[index].print();
 	contacts[index] = Contact(m_firstName, m_nickname,  m_lastName, m_phoneNum, m_darkestSecret);
 	contacts[index].print();
 	index = (index + 1 == 7) ? 0 : index + 1;
 }
 
-void PhoneBook::promptUser(char *str, std::string& buffer)
+
+void PhoneBook::searchCommand()
+{
+	PhoneBook::dumpContactList();
+}
+
+void PhoneBook::dumpContactList()
+{
+	std::setw(10);
+	
+}
+
+void PhoneBook::promptUser(const char *str, std::string& buffer)
 {
 	std::cout << "Enter " << str << ": " << std::flush;
 	std::cin >> buffer;
