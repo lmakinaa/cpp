@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:40:30 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 11:20:14 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 11:26:25 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,8 @@ public:
 	void addCommand();
 	void dumpContactList();
 	void searchCommand();
-	//void exitCommand();
 	void runPhoneBook();
-	void promptUser(char *str, std::string& buffer);
+	void promptUser(const char *str, std::string& buffer);
 	
 };
 
