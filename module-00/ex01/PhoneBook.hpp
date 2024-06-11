@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:40:30 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 11:26:25 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 12:42:39 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 #include <cctype>
 #include "Contact.hpp"
 
 class PhoneBook
 {
 private:
-	Contact contacts[8];
-
-	// the offset that indicate the current position in the contacts array
-	int index;
-
+	// the offset that indicate the current position in the m_m_contacts array
+	int m_index;
+	Contact m_contacts[8];
 	std::string m_firstName;
 	std::string m_lastName;
 	std::string m_nickname;
 	std::string m_phoneNum;
 	std::string m_darkestSecret;
+	bool 		m_empty;
 
 public:
 	PhoneBook();

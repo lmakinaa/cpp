@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:31:14 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 11:46:55 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 12:56:56 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 PhoneBook::PhoneBook()
 {
+	m_empty = true;
 }
 
 void PhoneBook::runPhoneBook()
 {
 	std::string line;
-	index = 0;
+	m_index = 0;
 	while (1)
 	{
 		std::cout << "$> " << std::flush;
@@ -71,31 +72,60 @@ void PhoneBook::addCommand()
 				break ;
 		}
 	}
-	contacts[index] = Contact(m_firstName,
+	m_contacts[m_index] = Contact(m_firstName,
 							  m_nickname,
 							  m_lastName,
 							  m_phoneNum,
 							  m_darkestSecret,
-							  index);
-	index = (index + 1 == 7) ? 0 : index + 1;
-	dumpContactList();
+							  m_index + 1);
+	m_index = (m_index + 1 == 7) ? 0 : m_index + 1;
+	if (m_empty == true)
+		m_empty = false;
 }
 
 
 void PhoneBook::searchCommand()
 {
-	dumpContactList();
-}
-
-void PhoneBook::dumpContactList()
-{
-	for (int i = 0; i < index; i++)
-		contacts[i].print();
+	int query = 0;
+	if (m_empty == true)
+	{
+		std::cout << "The phonebook is empty.\n";
+		return;
+	}
+	for (int i = 0; i < m_index; i++)
+		m_contacts[i].formatedPrint();
+	while (1)
+	{
+		query = -1;
+		std::cout << "Search by index: " << std::flush;
+		std::cin >> query;
+		if (!(query >= 1 && query <= 8))
+		{
+			std::cout << "Invalid query. Try again.\n";
+			continue;
+		}
+		else
+		{
+			m_contacts[query - 1].dumpInfo();
+			return ;
+		}
+	}
 }
 
 void PhoneBook::promptUser(const char *str, std::string& buffer)
 {
-	std::cout << "Enter " << str << ": " << std::flush;
-	std::cin >> buffer;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::string word;
+	while (1)
+	{
+		std::cout << "Enter " << str << ": " << std::flush;
+		std::getline(std::cin, buffer);
+		if (buffer.empty() == true)
+			continue ;
+		std::stringstream s(buffer);
+		s >> std::ws >> word;
+		if (word.empty() == true)
+			continue ;
+		buffer = word;
+		break ;
+	}
 }
