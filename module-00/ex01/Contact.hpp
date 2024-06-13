@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:39:26 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 12:16:23 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 12:57:55 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ public:
 			std::string phoneNum,
 			std::string darkestSecret,
 			int index);
-	void formatedPrint();
 	void dumpInfo();
+	void formatedPrint();
 	void putWord(std::string& str);
 };
 
