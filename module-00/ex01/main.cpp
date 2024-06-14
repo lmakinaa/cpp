@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:41:12 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/04 23:33:34 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 12:59:33 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 int main()
 {
-	// TODO: remove the constructor and replace with a regular function that sets data
 	PhoneBook test;
 	test.runPhoneBook();
 }
