@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:31:14 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 12:56:56 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 13:02:08 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,15 @@ void PhoneBook::addCommand()
 		switch(phase)
 		{
 			case 0:
-				promptUser("first name", m_firstName);
+				promptOneWord("first name", m_firstName);
 				phase = 1;
 				break ;
 			case 1:
-				promptUser("last name", m_lastName);
+				promptOneWord("last name", m_lastName);
 				phase = 2;
 				break ;
 			case 2:
-				promptUser("nickname", m_nickname);
+				promptOneWord("nickname", m_nickname);
 				phase = 3;
 				break ;
 			case 3:
@@ -112,7 +112,7 @@ void PhoneBook::searchCommand()
 	}
 }
 
-void PhoneBook::promptUser(const char *str, std::string& buffer)
+void PhoneBook::promptOneWord(const char *str, std::string& buffer)
 {
 	std::string word;
 	while (1)
