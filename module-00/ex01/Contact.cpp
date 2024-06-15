@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:37:51 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 12:25:48 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/05 15:54:12 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ Contact::Contact()
 	m_index = -1;
 }
 
-Contact::Contact(std::string firstName,
-				 std::string lastName,
-				 std::string nickname,
-				 std::string phoneNum,
-				 std::string darkestSecret,
-				 int 		 index)
+void Contact::setInfo(std::string firstName,
+					  std::string lastName,
+					  std::string nickname,
+					  std::string phoneNum,
+					  std::string darkestSecret,
+					  int 		 index)
 {
 	m_firstName = firstName;
 	m_lastName = lastName;
