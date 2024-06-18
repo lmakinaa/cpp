@@ -20,7 +20,7 @@ Fixed::Fixed(const int intNum)
 }
 
 Fixed::Fixed(const float floatNum)
-    : m_value (round(floatNum * (1 << m_frac_bits)))
+    : m_value (roundf(floatNum * (1 << m_frac_bits)))
 {
     std::cout << "Float constructor called\n";
 }
