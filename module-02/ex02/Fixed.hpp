@@ -23,6 +23,10 @@ public:
     Fixed operator-(const Fixed& rOperand);
     Fixed operator*(const Fixed& rOperand);
     Fixed operator/(const Fixed& rOperand);
+    Fixed& operator++();
+    Fixed& operator++(int);
+    Fixed& operator--();
+    Fixed& operator--(int);
     bool operator>(const Fixed& rOperand) const;
     bool operator<(const Fixed& rOperand) const;
     bool operator<=(const Fixed& rOperand) const;
