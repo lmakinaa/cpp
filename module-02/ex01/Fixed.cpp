@@ -1,5 +1,5 @@
 #include "Fixed.hpp"
-
+#include <cmath>
 
 Fixed::Fixed() // init members here
     : m_value (0)
@@ -20,7 +20,7 @@ Fixed::Fixed(const int intNum)
 }
 
 Fixed::Fixed(const float floatNum)
-    : m_value (floatNum * (1 << m_frac_bits))
+    : m_value (round(floatNum * (1 << m_frac_bits)))
 {
     std::cout << "Float constructor called\n";
 }
