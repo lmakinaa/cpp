@@ -6,7 +6,7 @@ int main( void ) {
 
     Fixed a;
     Fixed const b( 10 );
-    Fixed const c( 42.42f );
+    Fixed c( 42.42f );
     Fixed const d( b );
 
     a = Fixed( 1234.4321f );
@@ -22,23 +22,12 @@ int main( void ) {
     std::cout << "d is " << d.toInt() << " as integer" << std::endl;
     
     std::cout << std::boolalpha;
+    std::cout << Fixed::min(a, c) << '\n';
+    a = Fixed(10);
+    c = Fixed(10);
+    
+    std::cout << Fixed::min(a, c) << '\n';
 
-    Fixed hmm;
-    hmm = a + b;
 
-    std::cout << hmm << '\n';
-
-    hmm = a * b;
-
-    std::cout << hmm << '\n';
-
-    hmm = a / b;
-
-    std::cout << hmm << '\n';
-
-    hmm = a - b;
-
-    std::cout << hmm << '\n';
-
-return 0;
+  return 0;
 }

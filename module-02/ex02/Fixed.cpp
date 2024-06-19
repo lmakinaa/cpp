@@ -95,7 +95,31 @@ Fixed Fixed::operator/(const Fixed& rOperand)
 
 // Increment/Decrement ops
 
+Fixed& Fixed::operator++()
+{
+    m_value++;
+    return *this;
+}
 
+Fixed& Fixed::operator++(int)
+{
+    m_value++;
+    return *this;
+}
+
+Fixed& Fixed::operator--()
+{
+    m_value--;
+    return *this;
+}
+
+Fixed& Fixed::operator--(int)
+{
+    m_value--;
+    return *this;
+}
+
+// other function members
 
 int Fixed::getRawBits() const
 {
@@ -116,6 +140,36 @@ int Fixed::toInt() const
 {
     return m_value >> m_frac_bits;
 }
+
+Fixed& Fixed::min(Fixed& fp1, Fixed& fp2)
+{
+    if (fp1.toFloat() > fp2.toFloat())
+        return fp2;
+    return fp1;
+}
+
+const Fixed& Fixed::min(const Fixed& fp1, const Fixed& fp2)
+{
+    if (fp1.toFloat() > fp2.toFloat())
+        return fp2;
+    return fp1;
+}
+
+Fixed& Fixed::max(Fixed& fp1, Fixed& fp2)
+{
+    if (fp1.toFloat() > fp2.toFloat())
+        return fp1;
+    return fp2;
+}
+
+const Fixed& Fixed::max(const Fixed& fp1, const Fixed& fp2)
+{
+    if (fp1.toFloat() > fp2.toFloat())
+        return fp1;
+    return fp2;
+}
+
+// other functions
 
 std::ostream& operator<<(std::ostream& out, const Fixed& inFixedPoint)
 {
