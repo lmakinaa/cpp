@@ -12,7 +12,7 @@ void f()
 
 int main()
 {
-    atexit(f);
+    /*atexit(f);*/
 
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
