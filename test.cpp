@@ -46,12 +46,13 @@ public:
 #include <string>
 
 int main() {
-    //std::string money;
+    std::string tt;
+	{
+		std::string str = "hi there";
+		std::string& s = str;
+		tt = s;
+	}
+	std::cout << tt;
 	
-    //std::cout << "Enter an amount of money: ";
-    //std::cin >> (money);
-    //std::cout << "You entered: " << money << std::endl;
- 	std::time_t	time = std::time(NULL);
-	std::cout << time;
     return 0;
 }

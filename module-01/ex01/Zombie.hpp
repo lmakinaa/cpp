@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:25:37 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/06 17:49:19 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/06 20:38:08 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	Zombie();
 	~Zombie();
 	void announce();
-	void setName(std::string name);
+	void setName(std::string& name);
 	
 };
 

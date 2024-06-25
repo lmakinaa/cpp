@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 17:38:53 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/06 20:38:28 by ijaija           ###   ########.fr       */
+/*   Created: 2024/06/07 16:22:41 by ijaija            #+#    #+#             */
+/*   Updated: 2024/06/07 16:36:07 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 
-Zombie* zombieHorde(int N, std::string& name)
+#include "Weapon.hpp"
+#include <iostream>
+
+/*
+* We use pointer here because ref should be initialized immmediatly, so
+* as the HumanB not always have a weapon, referance is no longer an option
+*/
+
+class HumanB
 {
-	Zombie* res = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		res[i].setName(name);
-	return (res);
-}
+	
+public:
+	HumanB(const char* name);
+	~HumanB();
+	void attack();
+	void setWeapon(Weapon& weapon);
+
+private:
+	std::string m_name;
+	Weapon* m_weapon;
+
+};
+
+#endif
