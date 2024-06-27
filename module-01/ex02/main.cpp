@@ -6,11 +6,12 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 18:08:48 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/06 18:21:18 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/07 18:30:02 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 /*
 * The only difference between a pointer and referance is the syntax.

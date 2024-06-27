@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   File.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 16:46:48 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/07 18:29:30 by ijaija           ###   ########.fr       */
+/*   Created: 2024/06/07 18:28:13 by ijaija            #+#    #+#             */
+/*   Updated: 2024/06/07 21:07:16 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#ifndef FILE_HPP
+# define FILE_HPP
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
-class Harl
+class File
 {
 	
 public:
-	Harl();
-	~Harl();
-	void complain(std::string level);
-	typedef void (Harl::*t_m_func) ();
-	
-private:
-	void debug( void );
-	void info( void );
-	void warning( void );
-	void error( void );
-};
+	File(const char *filename);
+	~File();
+	int createReplaceFile(std::string match, const char* substitue);
 
+private:
+	std::string m_filename;
+	std::ifstream m_inFileStream;
+
+};
 
 #endif

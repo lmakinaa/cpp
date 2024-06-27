@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 20:44:50 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/07 16:25:12 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/07 18:29:40 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "Weapon.hpp"
 #include <iostream>
+#include <string>
 
 
 class HumanA
