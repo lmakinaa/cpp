@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 16:46:48 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/08 06:18:07 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/06/09 21:17:07 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Harl
 public:
 	Harl();
 	~Harl();
-	void startComplaining(std::string& level);
+	void startComplaining(std::string level);
 	void serieOfComplain(int c);
 	typedef void (Harl::*t_m_func) ();
 	
