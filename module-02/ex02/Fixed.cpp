@@ -25,6 +25,11 @@ Fixed::Fixed(const float floatNum)
     /*std::cout << "Float constructor called\n";*/
 }
 
+Fixed::~Fixed()
+{
+    /*std::cout << "Destructor called\n";*/
+}
+
 Fixed& Fixed::operator=(const Fixed& src)
 {
     if (this == &src)
@@ -33,6 +38,8 @@ Fixed& Fixed::operator=(const Fixed& src)
     setRawBits(src.getRawBits());
     return *this;
 }
+
+// Comparaison ops
 
 bool Fixed::operator>(const Fixed& rOperand) const
 {
@@ -64,6 +71,8 @@ bool Fixed::operator!=(const Fixed& rOperand) const
     return (m_value != rOperand.m_value); 
 }
 
+// Arethmetic ops
+
 Fixed Fixed::operator+(const Fixed& rOperand)
 {
     return (Fixed(this->toFloat() + rOperand.toFloat()));
@@ -84,10 +93,9 @@ Fixed Fixed::operator/(const Fixed& rOperand)
     return (Fixed(this->toFloat() / rOperand.toFloat()));
 }
 
-Fixed::~Fixed()
-{
-    /*std::cout << "Destructor called\n";*/
-}
+// Increment/Decrement ops
+
+
 
 int Fixed::getRawBits() const
 {
