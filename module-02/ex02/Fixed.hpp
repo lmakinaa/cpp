@@ -33,11 +33,16 @@ public:
     bool operator>=(const Fixed& rOperand) const;
     bool operator==(const Fixed& rOperand) const;
     bool operator!=(const Fixed& rOperand) const;
-
+  
+    // other function members
     int getRawBits() const;
     void setRawBits(int const raw);
     float toFloat() const;
     int toInt() const;
+    static Fixed& min(Fixed& fp1, Fixed& fp2);
+    static const Fixed& min(const Fixed& fp1, const Fixed& fp2);
+    static Fixed& max(Fixed& fp1, Fixed& fp2);
+    static const Fixed& max(const Fixed& fp1, const Fixed& fp2);
 
 private:
     static const int m_frac_bits = 8;
