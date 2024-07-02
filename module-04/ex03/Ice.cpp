@@ -1,7 +1,7 @@
 #include "Ice.hpp"
 
 Ice::Ice()
-    : AMateria("cure")
+    : AMateria("ice")
 {
     /*std::cout << "Ice constructed.\n";*/
 }
