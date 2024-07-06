@@ -31,6 +31,30 @@ public:
 	}
 };
 
+class Tdd
+{
+
+public:
+    Tdd() {};
+    Tdd(const Tdd& src);
+    Tdd& operator=(const Tdd& src);
+
+};
+
+    Tdd::Tdd(const Tdd& src)
+    {
+        std::cout << "copy called\n";
+        *this = src;
+    }
+    Tdd& Tdd::operator=(const Tdd& src)
+    {
+        std::cout << "assignement called\n";
+        if (this == &src)
+            return (*this);
+    return *this;    
+    }
+
+
 //int main()
 //{
 //	Point3d point1;
@@ -46,13 +70,7 @@ public:
 #include <string>
 
 int main() {
-    std::string tt;
-	{
-		std::string str = "hi there";
-		std::string& s = str;
-		tt = s;
-	}
-	std::cout << tt;
-	
+	Tdd sdf;
+
     return 0;
 }
