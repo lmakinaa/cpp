@@ -31,5 +31,19 @@ int main()
     for (int i = 0; i < 4; i++)
         delete hiwan[i];
 
+
+    // other tests
+
+    std::cout << "\n\t\tOther Tests:\t\t\n\n";
+
+    Dog shit;
+
+    {
+        Dog tt;
+        tt = shit;
+
+        Dog other(tt);
+    }
+
     return 0;
 }

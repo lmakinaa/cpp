@@ -29,7 +29,7 @@ Cat::Cat(const Cat& src)
         std::exit(1);
     }
     type = src.type;
-    std::cout << "Cat copy construction called.\n";
+    std::cout << "Cat has been copy constructed.\n";
 }
 
 Cat& Cat::operator=(const Cat& src)

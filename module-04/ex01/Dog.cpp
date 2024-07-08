@@ -28,7 +28,7 @@ Dog::Dog(const Dog& src)
         std::exit(1);
     }
     type = src.type;
-    std::cout << "Dog copy construction called.\n";
+    std::cout << "Dog has been copy constructed.\n";
 }
 
 Dog& Dog::operator=(const Dog& src)
