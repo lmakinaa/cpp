@@ -4,7 +4,6 @@
 #include "WrongAnimal.hpp"
 #include <cstdlib>
 
-// It requires more testing copy constructors and copy assign
 
 void f()
 {
