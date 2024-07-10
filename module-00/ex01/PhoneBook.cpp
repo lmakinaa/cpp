@@ -6,7 +6,7 @@
 /*   By: ijaija <ijaija@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 11:31:14 by ijaija            #+#    #+#             */
-/*   Updated: 2024/06/05 17:42:38 by ijaija           ###   ########.fr       */
+/*   Updated: 2024/07/29 23:08:04 by ijaija           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void PhoneBook::runPhoneBook()
 {
 	std::string line;
 	m_index = 0;
-	while (1)
+	while (std::cin.eof() == 0)
 	{
-		std::cout << "$> " << std::flush;
+		std::cout << "\033[0;33m$> \033[0m" << std::flush;
 		std::getline(std::cin, line);
 		if (line.compare("ADD") == 0)
 			addCommand();
@@ -45,7 +45,7 @@ void PhoneBook::addCommand()
 	int	i;
 	int phase = 0;
 
-	while (phase != 5)
+	while (phase != 5 && std::cin.eof() == 0)
 	{
 		switch(phase)
 		{
@@ -62,7 +62,7 @@ void PhoneBook::addCommand()
 				phase = 3;
 				break ;
 			case 3:
-				std::cout << "Enter phone number: " << std::flush;
+				std::cout << "\033[1;32mEnter phone number: \033[0m" << std::flush;
 				std::getline(std::cin, m_phoneNum);
 				i = 0;
 				while (m_phoneNum[i] && isdigit(m_phoneNum[i]))
@@ -71,7 +71,7 @@ void PhoneBook::addCommand()
 					phase = 4;
 				break ;
 			case 4:
-				std::cout << "Enter darkest secret: " << std::flush;
+				std::cout << "\033[1;32mEnter darkest secret: \033[0m" << std::flush;
 				std::getline(std::cin, m_darkestSecret);
 				phase = 5;
 				break ;
@@ -94,19 +94,21 @@ void PhoneBook::searchCommand()
 	int query = 0;
 	if (m_empty == true)
 	{
-		std::cout << "The phonebook is empty.\n";
+		std::cout << "\033[1;31mThe phonebook is empty.\033[0m\n";
 		return;
 	}
 	for (int i = 0; i < m_index; i++)
 		m_contacts[i].formatedPrint();
-	while (1)
+	while (std::cin.eof() == 0)
 	{
 		query = -1;
-		std::cout << "Search by index: " << std::flush;
+		std::cout << "\033[0;33mSearch by index: \033[0m" << std::flush;
 		std::cin >> query;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX,'\n');
 		if (!(query >= 1 && query <= 8))
 		{
-			std::cout << "Invalid query. Try again.\n";
+			std::cout << "\033[1;31mInvalid query. Try again.\033[0m\n";
 			continue;
 		}
 		else
@@ -120,9 +122,9 @@ void PhoneBook::searchCommand()
 void PhoneBook::promptOneWord(const char *str, std::string& buffer)
 {
 	std::string word;
-	while (1)
+	while (std::cin.eof() == 0)
 	{
-		std::cout << "Enter " << str << ": " << std::flush;
+		std::cout << "\033[1;32mEnter " << str << ": \033[0m" << std::flush;
 		std::getline(std::cin, buffer);
 		if (buffer.empty() == true)
 			continue ;
