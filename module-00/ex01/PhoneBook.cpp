@@ -10,6 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ 
+this is how switch works (t9riban):
+
+switch (i) {
+   case 1: printf("case 1"); break;
+   case 2: printf("case 2"); break;
+   case 3: printf("case 3"); break;
+}
+it could generate code roughly equivalent to something like this:
+
+void case1() { printf("case 1"); }
+void case2() { printf("case 2"); }
+void case3() { printf("case 3"); }
+
+typedef void (*pfunc)(void);
+
+pfunc functions[3] = {case1, case2, case3};
+
+if ((unsigned)i<3)    
+    functions[i]();
+
+*/
+
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
