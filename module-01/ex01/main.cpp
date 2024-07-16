@@ -12,14 +12,14 @@
 
 #include "Zombie.hpp"
 
-//void f()
-//{
-//	system("leaks zombies");
-//}
+void f()
+{
+	system("leaks zombies");
+}
 
 int main()
 {
-	//atexit(f);
+	atexit(f);
 	Zombie* zombies = zombieHorde(6, "Zombie-Nx");
 	
 	for (int i = 0; i < 6; i++)
