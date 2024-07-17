@@ -16,8 +16,7 @@ void f()
 {
 	system("lsof -c freplace");
 }
-//read all file
-//create a test file from code dont push with test
+
 int main(int ac, char **av)
 {
 	if (ac != 4)
