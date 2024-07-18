@@ -27,8 +27,8 @@ public:
 	void attack();
 
 private:
-	std::string m_name;
 	Weapon& m_weapon;
+	std::string m_name;
 
 };
 

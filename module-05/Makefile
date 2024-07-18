@@ -1,8 +1,8 @@
 CC=c++
 CFLAGS=-Wall -Wextra -Werror -std=c++98
-NAME=trap
-SRC=ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
-INC=ClapTrap.hpp FragTrap.hpp ScavTrap.hpp
+NAME=tt
+SRC=Ttt.cpp main.cpp
+INC=Ttt.hpp 
 OBJ=$(SRC:.cpp=.o)
 
 all: $(NAME)
