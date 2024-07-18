@@ -9,7 +9,7 @@ class ClapTrap
 
 public:
     // Caninical form
-    ClapTrap(const char* name);
+    ClapTrap(const std::string name);
     ClapTrap(const ClapTrap& src);
     ~ClapTrap();
     ClapTrap& operator=(const ClapTrap& src);

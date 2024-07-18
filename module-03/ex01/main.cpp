@@ -1,5 +1,7 @@
 #include "ScavTrap.hpp"
 
+// test assign operator and copy constructor
+
 int main()
 {
     ScavTrap p1("Da-Hmad");
