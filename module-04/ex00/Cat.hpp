@@ -9,8 +9,12 @@ class Cat : public Animal
 {
 
 public:
+    // Canonical form
     Cat();
     ~Cat();
+    Cat(const Cat& src);
+    Cat& operator=(const Cat& src);
+
     void makeSound() const;
 
 };
