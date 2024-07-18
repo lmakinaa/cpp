@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const char* name) 
+ClapTrap::ClapTrap(const std::string name) 
     : m_name (name)
     , m_hitPts (10)
     , m_energyPts (10)

@@ -5,14 +5,22 @@
 #include <string>
 #include "ClapTrap.hpp"
 
-class FragTrap : public virtual ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 
 public:
-    FragTrap(const char* name);
+    // canonical form
+    FragTrap(const std::string name);
     ~FragTrap();
+    FragTrap(const FragTrap& src);
+    FragTrap& operator=(const FragTrap& src);
 
     void highFivesGuys();
+
+protected:
+    unsigned int m_hitPts;
+    unsigned int m_energyPts;
+    unsigned int m_attackDamage;
 
 };
 

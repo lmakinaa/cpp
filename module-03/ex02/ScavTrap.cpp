@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(const char* name)
+ScavTrap::ScavTrap(const std::string name)
     : ClapTrap(name)
 {
     this->m_hitPts = 100;
@@ -14,8 +14,26 @@ ScavTrap::~ScavTrap()
     std::cout << m_name << " has been downgraded to a ClapTrap!\n";
 }
 
-// Other member functions
+ScavTrap::ScavTrap(const ScavTrap& src)
+    : ClapTrap(src.m_name)
+{
+    *this = src;
+    std::cout << m_name << " has been copy upgraded to a ScavTrap!\n";
+}
 
+ScavTrap& ScavTrap::operator=(const ScavTrap& src)
+{
+    if (this == &src)
+        return *this;
+    this->m_name = src.m_name;
+    this->m_hitPts = src.m_hitPts;
+    this->m_energyPts = src.m_energyPts;
+    this->m_attackDamage = src.m_attackDamage;
+    
+    return *this;
+}
+
+// Other member functions
 void ScavTrap::attack(const std::string& target)
 {
     if (m_energyPts < 1)
@@ -31,6 +49,11 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::guardGate() const
 {
+    if (m_energyPts < 1)
+    {
+        std::cout << m_name << " has no energy points\n";
+        return ;
+    }
     std::cout << "ScavTrap " << m_name
         << " is now in Gate keeper mode!\n";
 }

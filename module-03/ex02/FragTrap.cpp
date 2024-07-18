@@ -14,6 +14,25 @@ FragTrap::~FragTrap()
     std::cout << m_name << " has been downgraded to a ClapTrap!\n";
 }
 
+FragTrap::FragTrap(const FragTrap& src)
+    : ClapTrap(src.m_name)
+{
+    *this = src;
+    std::cout << m_name << " has been copy upgraded to a FragTrap!\n";
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& src)
+{
+    if (this == &src)
+        return *this;
+    this->m_name = src.m_name;
+    this->m_hitPts = src.m_hitPts;
+    this->m_energyPts = src.m_energyPts;
+    this->m_attackDamage = src.m_attackDamage;
+    
+    return *this;
+}
+
 void FragTrap::highFivesGuys()
 {
     if (m_energyPts < 1)
