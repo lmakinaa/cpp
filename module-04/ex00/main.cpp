@@ -36,11 +36,13 @@ int main()
     const WrongCat* wrongCat = new WrongCat();
 
     std::cout << wrongI->getType() << std::endl;
+    std::cout << wrongMeta->getType() << std::endl;
     
     wrongI->makeSound();
     wrongMeta->makeSound();
     wrongCat->makeSound();
 
+    wrongCat->WrongAnimal::makeSound();
 
     delete wrongMeta;
     delete wrongI;

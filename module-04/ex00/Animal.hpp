@@ -8,12 +8,16 @@ class Animal
 {
 
 public:
+    // Canonical form
     Animal();
     Animal(const Animal& src);
     virtual ~Animal();
     Animal& operator=(const Animal& src);
-    virtual void makeSound() const;
+
+    // Getter
     const std::string& getType() const;
+
+    virtual void makeSound() const;
 
 protected:
     std::string type;
