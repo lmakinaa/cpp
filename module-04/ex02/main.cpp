@@ -5,14 +5,14 @@
 #include <cstdlib>
 
 
-void f()
-{
-    system("leaks polymorphism");
-}
+//void f()
+//{
+//    system("leaks polymorphism");
+//}
 
 int main()
 {
-    /*atexit(f);*/
+    //atexit(f);
     
     const AAnimal* j = new Dog();
     const AAnimal* i = new Cat();
