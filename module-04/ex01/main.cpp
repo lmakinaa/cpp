@@ -44,5 +44,19 @@ int main()
         Dog other(tt);
     }
 
+    // other tests
+
+    //Cat *m = new Cat;
+    //m->setIdea("hhh", 0);
+    //m->setIdea("tmjnin", 1);
+    //m->showIdeas();
+
+    //Cat d(*m);
+
+    //delete m;
+    //std::cout << "-----" << std::endl;
+
+    //d.showIdeas();
+
     return 0;
 }

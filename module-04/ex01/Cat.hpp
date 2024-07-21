@@ -17,6 +17,8 @@ public:
     ~Cat();
 
     void makeSound() const;
+    void setIdea(std::string idea, int index);
+    void showIdeas();
 
 private:
     Brain* m_brain;
