@@ -36,16 +36,8 @@ Cat& Cat::operator=(const Cat& src)
 {
     if (this == &src)
         return *this;
-    delete m_brain;
-    try 
-    {
-        m_brain = new Brain(*src.m_brain);
-    }
-    catch (const std::exception& e)
-    {
-        std::cerr << "Exception caught: " << e.what() << '\n'; 
-        std::exit(1);
-    }
+
+    *m_brain = *(src.m_brain);
     type = src.type;
     std::cout << "Cat copy assignement called.\n";
     return *this;
@@ -62,3 +54,12 @@ void Cat::makeSound() const
     std::cout << "MEOW MEOW NI**A\n";
 }
 
+void Cat::setIdea(std::string idea, int index)
+{
+    m_brain->setIdea(idea, index);
+}
+
+void Cat::showIdeas()
+{
+    m_brain->showIdeas();
+}
