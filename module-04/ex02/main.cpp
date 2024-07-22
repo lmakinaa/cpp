@@ -5,17 +5,17 @@
 #include <cstdlib>
 
 
-//void f()
-//{
-//    system("leaks polymorphism");
-//}
+void f()
+{
+    system("leaks polymorphism");
+}
 
 int main()
 {
-    //atexit(f);
+    /*atexit(f);*/
     
-    const AAnimal* j = new Dog();
-    const AAnimal* i = new Cat();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
     delete j;//should not create a leak
     delete i;
 
@@ -23,7 +23,7 @@ int main()
 
     std::cout << "\n\t\tOther Tests:\t\t\n\n";
 
-    AAnimal* hiwan[4] = {new Dog(), new Dog(), new Cat(), new Cat()}; 
+    Animal* hiwan[4] = {new Dog(), new Dog(), new Cat(), new Cat()}; 
     
     std::cout << std::endl;
     
@@ -43,6 +43,20 @@ int main()
 
         Dog other(tt);
     }
+
+    // other tests
+
+    //Cat *m = new Cat;
+    //m->setIdea("hhh", 0);
+    //m->setIdea("tmjnin", 1);
+    //m->showIdeas();
+
+    //Cat d(*m);
+
+    //delete m;
+    //std::cout << "-----" << std::endl;
+
+    //d.showIdeas();
 
     return 0;
 }
