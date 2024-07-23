@@ -14,8 +14,8 @@ int main()
 {
     /*atexit(f);*/
     
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const AAnimal* j = new Dog();
+    const AAnimal* i = new Cat();
     delete j;//should not create a leak
     delete i;
 
@@ -23,7 +23,7 @@ int main()
 
     std::cout << "\n\t\tOther Tests:\t\t\n\n";
 
-    Animal* hiwan[4] = {new Dog(), new Dog(), new Cat(), new Cat()}; 
+    AAnimal* hiwan[4] = {new Dog(), new Dog(), new Cat(), new Cat()}; 
     
     std::cout << std::endl;
     
