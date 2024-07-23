@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 
 Cat::Cat() // init members here
-    : Animal()
+    : AAnimal()
 {
     type = "Cat";
     try 
@@ -17,7 +17,7 @@ Cat::Cat() // init members here
 }
 
 Cat::Cat(const Cat& src)
-    : Animal()
+    : AAnimal()
 {
     try 
     {
