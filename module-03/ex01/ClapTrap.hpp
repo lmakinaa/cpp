@@ -9,11 +9,12 @@ class ClapTrap
 
 public:
     // Caninical form
-    ClapTrap(const std::string name);
+    ClapTrap();
     ClapTrap(const ClapTrap& src);
     ~ClapTrap();
     ClapTrap& operator=(const ClapTrap& src);
     
+    ClapTrap(const std::string name);
     // getters
     const std::string& getName() const;
     unsigned int getAttackDamage() const;

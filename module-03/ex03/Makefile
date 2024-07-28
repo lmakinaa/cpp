@@ -1,5 +1,5 @@
 CC=c++
-CFLAGS=-Wall -Wextra -Werror -std=c++98 -Wshadow
+CFLAGS=-Wall -Wextra -Werror -std=c++98 #-Wshadow
 NAME=trap
 SRC=ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp main.cpp
 INC=ClapTrap.hpp FragTrap.hpp ScavTrap.hpp DiamondTrap.hpp
