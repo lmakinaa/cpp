@@ -10,16 +10,19 @@ class Bureaucrat
 public:
 	Bureaucrat();
 	~Bureaucrat();
+
+	void incrementGrade();
+	void decrementGrade();
+
 	const std::string& getName() const;
 	int getGrade() const;
-	void upgrade();
-	void downgrade();
-	std::ostream& operator<<(std::ostream& out, const Bureaucrat& in);
 
 private:
-	std::string m_name;
+	const std::string m_name;
 	int	m_grade;
 
 };
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& in);
 
 #endif

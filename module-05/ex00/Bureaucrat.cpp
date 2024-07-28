@@ -2,6 +2,7 @@
 
 Bureaucrat::Bureaucrat()
 {
+	throw - 1;
 }
 
 Bureaucrat::~Bureaucrat()

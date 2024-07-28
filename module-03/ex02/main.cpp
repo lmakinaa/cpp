@@ -22,8 +22,8 @@ int main()
 
     std::cout << std::endl;
 
-    p1.beRepaired(9);
-    p2.beRepaired(9);
+    p1.beRepaired(99);
+    p2.beRepaired(99);
    
     std::cout << std::endl;
     

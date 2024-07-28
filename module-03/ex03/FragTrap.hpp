@@ -10,17 +10,15 @@ class FragTrap : virtual public ClapTrap
 
 public:
     // canonical form
-    FragTrap(const std::string name);
+    FragTrap();
     ~FragTrap();
     FragTrap(const FragTrap& src);
     FragTrap& operator=(const FragTrap& src);
 
-    void highFivesGuys();
+    FragTrap(const std::string name);
 
-protected:
-    unsigned int m_hitPts;
-    unsigned int m_energyPts;
-    unsigned int m_attackDamage;
+    void attack(const std::string& target);
+    void highFivesGuys();
 
 };
 

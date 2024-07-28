@@ -10,11 +10,14 @@ class FragTrap : public ClapTrap
 
 public:
     // canonical form
-    FragTrap(const char* name);
+    FragTrap();
     ~FragTrap();
     FragTrap(const FragTrap& src);
     FragTrap& operator=(const FragTrap& src);
 
+    FragTrap(const char* name);
+
+    void attack(const std::string& target);
     void highFivesGuys();
 
 };

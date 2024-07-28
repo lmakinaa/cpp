@@ -1,5 +1,13 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() 
+    : m_hitPts (10)
+    , m_energyPts (10)
+    , m_attackDamage (0)
+{
+    std::cout << "Default constructor called\n";
+}
+
 ClapTrap::ClapTrap(const std::string name) 
     : m_name (name)
     , m_hitPts (10)

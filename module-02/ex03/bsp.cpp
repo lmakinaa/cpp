@@ -14,8 +14,6 @@ Fixed triangleArea(Point a, Point b, Point c)
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-    if (point == a || point == b || point == c)
-        return (false);
     Fixed areaABC = triangleArea(a, b, c);
     Fixed areaPBC = triangleArea(point, b, c);
     Fixed areaAPC = triangleArea(a, point, c);
