@@ -1,11 +1,20 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap()
+    : ClapTrap()
+{
+    m_hitPts = 100;
+    m_energyPts = 50;
+    m_attackDamage = 20;
+    std::cout << "Default constructor called\n";
+}
+
 ScavTrap::ScavTrap(const std::string name)
     : ClapTrap(name)
 {
-    this->m_hitPts = 100;
-    this->m_energyPts = 50;
-    this->m_attackDamage = 20;
+    m_hitPts = 100;
+    m_energyPts = 50;
+    m_attackDamage = 20;
     std::cout << name << " has been upgraded to a ScavTrap!\n";
 }
 
@@ -25,10 +34,10 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src)
 {
     if (this == &src)
         return *this;
-    this->m_name = src.m_name;
-    this->m_hitPts = src.m_hitPts;
-    this->m_energyPts = src.m_energyPts;
-    this->m_attackDamage = src.m_attackDamage;
+    m_name = src.m_name;
+    m_hitPts = src.m_hitPts;
+    m_energyPts = src.m_energyPts;
+    m_attackDamage = src.m_attackDamage;
     
     return *this;
 }

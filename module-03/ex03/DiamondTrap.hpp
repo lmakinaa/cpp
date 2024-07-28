@@ -22,9 +22,6 @@ public:
 
 private:
 	std::string m_name;
-    using FragTrap::m_hitPts;
-    using ScavTrap::m_energyPts;
-    using FragTrap::m_attackDamage;
 
 };
 

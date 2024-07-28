@@ -6,6 +6,9 @@ DiamondTrap::DiamondTrap(const std::string name)
 	, FragTrap(name)
 	, m_name (name)
 {
+    m_hitPts = 100;
+    m_energyPts = 50;
+    m_attackDamage = 30;
     ClapTrap::m_name += "_clap_name";
     std::cout << name << " has been upgraded to a DiamondTrap!\n";
 }
