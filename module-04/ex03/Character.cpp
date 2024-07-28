@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character(const char* name)
+Character::Character(const std::string name)
     : m_name (name)
 {
     for (int i = 0; i < 4; i++)
