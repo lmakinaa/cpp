@@ -8,6 +8,10 @@
 #include <iostream>
 #include <string>
 
+
+// thow(): exception specifier
+// the compiler is unable to enforce this, so it has to be checked at
+// runtime, which is usually undesirable.
 class Bureaucrat
 {
 	
