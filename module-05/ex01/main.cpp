@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main ()
 {
@@ -7,8 +8,8 @@ int main ()
 		Bureaucrat b1("mowadaf1", 1);
 		std::cout << b1;
 
-		Bureaucrat b2("mowadaf2", 0);
-		std::cout << b2;
+		Form f1("Permi", 2, 151);
+		std::cout << f1;
 		
 	}
 	catch (std::exception & e)
@@ -16,20 +17,14 @@ int main ()
 		std::cerr << "Exception caught: " << e.what() << '\n';
 	}
 
-	try
-	{
-		Bureaucrat b3("mowadaf3", 150);
-		std::cout << b3;
 
-		Bureaucrat b4("mowadaf4", 151);
-		std::cout << b4;
-		
-	}
-	catch (std::exception & e)
-	{
-		std::cerr << "Exception caught: " << e.what() << '\n';
-		return 1;
-	}
+	Bureaucrat b2("lm9adem", 3);
+	Form f2("Chahadat sokna", 1, 2);
+	b2.signForm(f2);
+
+
+	Bureaucrat b3("l9ayd", 2);
+	b3.signForm(f2);
 
 
 	return 0;
