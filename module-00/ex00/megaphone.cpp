@@ -16,7 +16,7 @@
 void	strUpper(std::string& str)
 {
 	for (size_t i = 0; i < str.length(); i++)
-		str[i] = toupper(str[i]);
+		str[i] = std::toupper(str[i]);
 }
 
 int main(int ac, char *av[])
