@@ -7,14 +7,14 @@
 
 #include <iostream>
 #include <string>
+#include "Form.hpp"
 
+class Form;
 
-// thow(): exception specifier
-// the compiler is unable to enforce this, so it has to be checked at
-// runtime, which is usually undesirable.
 class Bureaucrat
 {
-	
+
+public:
 	class GradeTooHighException: public std::exception
 	{
 	public:
@@ -38,6 +38,7 @@ public:
 
 	void incrementGrade();
 	void decrementGrade();
+	void signForm(Form& form);
 
 	const std::string& getName() const;
 	int getGrade() const;
