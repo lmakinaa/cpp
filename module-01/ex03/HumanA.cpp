@@ -11,10 +11,6 @@
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
-/*
-* Defining in the body is assignement and defining after the (:) called initialisation
-* that is necessary to consts and refs
-*/
 
 HumanA::HumanA(const char* name, Weapon& weapon)
 	: m_weapon (weapon)

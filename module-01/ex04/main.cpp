@@ -19,12 +19,12 @@ void f()
 //read all file
 int main(int ac, char **av)
 {
-	atexit(f);
 	if (ac != 4)
 	{
 		std::cout << "Usage: ./freplace <filename> <match string> <substitute>\n";
 		return 1;
 	}
+	atexit(f);
 	File f(av[1]);
 	if (f.createReplaceFile(av[2], av[3]) == 1)
 		return (1);
