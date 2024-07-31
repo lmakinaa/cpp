@@ -36,6 +36,7 @@ File::~File()
 int File::createReplaceFile(std::string match, const char* substitue)
 {
 	std::string replaceFileName = m_filename + ".replace";
+	std::string buffer;
 	
 	std::ofstream replaceFile (replaceFileName);
 	if (!replaceFile)
@@ -49,14 +50,16 @@ int File::createReplaceFile(std::string match, const char* substitue)
 	{
 		if (m_inFileStream.peek() != EOF)
 			line += '\n';
-		pos = line.find(match);
-		if (pos != std::string::npos)
-		{
-			line.erase(pos, match.length());
-			line.insert(pos, substitue);
-		}
-		replaceFile << line;
+		buffer += line;
 	}
+	pos = buffer.find(match);
+	while (pos != std::string::npos)
+	{
+		buffer.erase(pos, match.length());
+		buffer.insert(pos, substitue);
+		pos = buffer.find(match);
+	}
+	replaceFile << buffer;
 	replaceFile.close();
 	return 0;
 }
