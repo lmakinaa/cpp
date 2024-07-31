@@ -1,8 +1,8 @@
 CC=c++
-CFLAGS=-Wall -Wextra -Werror -std=c++98 -g
+CFLAGS=-Wall -Wextra -Werror -std=c++98
 NAME=logger
 SRC=Account.cpp tests.cpp
-INC=Accounts.hpp
+INC=Account.hpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(NAME)
