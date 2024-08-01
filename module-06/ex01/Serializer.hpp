@@ -4,17 +4,21 @@
 #include <iostream>
 #include <string>
 
+struct Data {
+    int x;
+    int y;
+};
+
 class Serializer
 {
 
 public:
-    Serializer();
-    Serializer(const Serializer& src);
-    ~Serializer();
-    Serializer& operator=(const Serializer src);
+    static uintptr_t serialize(Data* ptr);
+    static Data* deserialize(uintptr_t raw);
 
 private:
-    // members here
+    Serializer();
+
 };
 
 #endif
