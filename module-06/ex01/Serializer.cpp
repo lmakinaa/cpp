@@ -1,22 +1,12 @@
 #include "Serializer.hpp"
 
-Serializer::Serializer() // init members here
+uintptr_t Serializer::serialize(Data* ptr)
 {
-    // default constructor
+    void* res = static_cast<void*> (ptr);
+    return reinterpret_cast<uintptr_t>(res);
 }
 
-Serializer::Serializer(const Serializer& src)
+Data* Serializer::deserialize(uintptr_t raw)
 {
-    // (copy constructor) init or assign members here
+    return (static_cast<Data*>(reinterpret_cast<void*>(raw)));
 }
-
-Serializer& Serializer::operator=(const Serializer& src)
-{
-    // (assign operator overload) init or assign members here
-}
-
-Serializer::~Serializer()
-{
-    // default destructor
-}
-
