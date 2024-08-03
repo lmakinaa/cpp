@@ -3,7 +3,7 @@
 int main ()
 {
 	try
-	{
+	{ 
 		Bureaucrat b1("mowadaf1", 1);
 		std::cout << b1;
 
