@@ -58,6 +58,6 @@ Dog::~Dog()
 
 void Dog::makeSound() const
 {
-    std::cout << "WOOF 7AYD MN HNA\n";    
+    std::cout << "WOOF WOOF\n";    
 }
 
