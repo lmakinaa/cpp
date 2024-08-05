@@ -4,10 +4,10 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public AAnimal
+class Cat : public Animal
 {
 
 public:
@@ -15,7 +15,10 @@ public:
     Cat(const Cat& src);
     Cat& operator=(const Cat& src);
     ~Cat();
+
     void makeSound() const;
+    void setIdea(std::string idea, int index);
+    void showIdeas();
 
 private:
     Brain* m_brain;

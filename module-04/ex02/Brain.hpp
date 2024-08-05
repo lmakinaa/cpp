@@ -13,6 +13,9 @@ public:
     ~Brain();
     Brain& operator=(const Brain& src);
 
+    void setIdea(std::string idea, int index);
+    void showIdeas();
+
 private:
     std::string m_ideas[100];
 
