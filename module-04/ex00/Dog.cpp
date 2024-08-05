@@ -1,6 +1,7 @@
 #include "Dog.hpp"
 
 Dog::Dog()
+    : Animal()
 {
     type = "Dog";
     std::cout << "Dog instance has been constructed.\n";
