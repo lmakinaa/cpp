@@ -1,6 +1,7 @@
 #include "Dog.hpp"
 
 Dog::Dog()
+    : AAnimal()
 {
     type = "Dog";
     try 
@@ -16,7 +17,7 @@ Dog::Dog()
 }
 
 Dog::Dog(const Dog& src)
-    : Animal()
+    : AAnimal()
 {
     try 
     {
