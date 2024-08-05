@@ -12,7 +12,9 @@ void f()
 
 int main()
 {
-    /*atexit(f);*/
+    //atexit(f);
+
+    //const AAnimal* j = new AAnimal(); //This won't work because AAnimal is an abstract class
     
     const AAnimal* j = new Dog();
     const AAnimal* i = new Cat();
