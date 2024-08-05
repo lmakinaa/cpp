@@ -13,6 +13,11 @@ MateriasTracker::~MateriasTracker()
     // Destructor
 }
 
+MateriasTracker::MateriasTracker(const MateriasTracker& src)
+{
+    *this = src;
+}
+
 MateriasTracker& MateriasTracker::operator=(const MateriasTracker& src)
 {
     if (this == &src)

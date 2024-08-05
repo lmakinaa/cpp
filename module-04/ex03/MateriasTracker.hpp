@@ -16,6 +16,7 @@ public:
     MateriasTracker();
     ~MateriasTracker();
     MateriasTracker& operator=(const MateriasTracker& src);
+    MateriasTracker(const MateriasTracker& src);
 
     void collectMateria(AMateria* materia);
     void destructMaterias();
