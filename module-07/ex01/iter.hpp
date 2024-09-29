@@ -4,8 +4,8 @@
 #include <iostream>
 #include <cctype>
 
-template<typename TArr, typename TLen, typename T>
-void iter(TArr target[], TLen length, T (*f)(TArr&))
+template<typename TArr, typename TLen, typename TRet, typename TParam>
+void iter(TArr target[], TLen length, TRet (*f)(TParam&))
 {
 	if (length <= 0 || !target || !f)
 		return ;

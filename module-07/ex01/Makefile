@@ -1,8 +1,8 @@
 CC=c++
 CFLAGS=-Wall -Wextra -Werror -std=c++98
 NAME=test
-SRC= main.cpp
-INC= item.hpp
+SRC=main.cpp
+INC=iter.hpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(NAME)
