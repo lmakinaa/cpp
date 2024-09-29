@@ -4,8 +4,8 @@
 #include <iostream>
 #include <cctype>
 
-template<typename TArr, typename TLen, typename TRet, typename TParam>
-void iter(TArr target[], TLen length, TRet (*f)(TParam&))
+template<typename TArr, typename TLen, typename TParam>
+void iter(TArr target[], TLen length, void (*f)(TParam&))
 {
 	if (length <= 0 || !target || !f)
 		return ;
@@ -16,7 +16,7 @@ void iter(TArr target[], TLen length, TRet (*f)(TParam&))
 
 // A template function for test
 template<typename T>
-void ft_print(T target)
+void ft_print(T& target)
 {
 	std::cout << target << std::endl;
 }
