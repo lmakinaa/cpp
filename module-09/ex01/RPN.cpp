@@ -42,9 +42,15 @@ int RPN::evaluate(std::string expression)
     if (!std::isdigit(tmp))
         throw std::runtime_error("Invalid RPN expression: first number isn't a digit");
 
+    if (ss.peek() != ' ')
+        throw std::runtime_error("Invalid RPN expression: first number isn't a digit");
+
     buff.push(tmp - '0');
     while (ss >> tmp) {
-    
+
+        if (ss.peek() != ' ' && ss.peek() != EOF)
+            throw std::runtime_error("Invalid RPN expression: first number isn't a digit");
+
         DEBUG && std::cout << "|" << tmp << "|\n";
         if (std::isdigit(tmp)) {
             buff.push(tmp - '0');
