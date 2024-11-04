@@ -15,6 +15,9 @@ class RPN
 public:
     static int evaluate(std::string expression);
 
+private:
+    RPN();
+
 };
 
 #endif
