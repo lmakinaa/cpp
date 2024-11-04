@@ -3,18 +3,18 @@
 
 #include <iostream>
 #include <string>
+#include <stack>
+#include <sstream>
+#include <algorithm>
+
+# define DEBUG 0
 
 class RPN
 {
 
 public:
-    RPN();
-    RPN(const RPN& src);
-    ~RPN();
-    RPN& operator=(const RPN& src);
+    static int evaluate(std::string expression);
 
-private:
-    // members here
 };
 
 #endif

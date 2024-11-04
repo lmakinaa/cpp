@@ -1,5 +1,4 @@
 #include "BitcoinExchange.hpp"
-#include <iomanip>
 
 static int integerLen(int n)
 {
@@ -110,21 +109,21 @@ void BitcoinExchange::evaluateInput(std::string inputFileName)
         std::getline(ss, key, '|');
 
         if (key.size() != 11) {
-            std::cout << "Error: bad input => " << key << std::endl;
+            std::cerr << "Error: bad input => " << key << std::endl;
             continue ;
         }
 
         try {dateToInt(key);} catch(std::exception&) {
-            std::cout << "Error: bad input => " << key << std::endl;
+            std::cerr << "Error: bad input => " << key << std::endl;
             continue ;
         }
 
         ss >> val;
         if (val < 0 || val > 1000) {
             if (val < 0)
-                std::cout << "Error: not a positive number." << std::endl;
+                std::cerr << "Error: not a positive number." << std::endl;
             else
-                std::cout << "Error: too large a number." << std::endl;
+                std::cerr << "Error: too large a number." << std::endl;
             continue ;
         }
     
