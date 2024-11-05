@@ -17,6 +17,9 @@ public:
 
 private:
     RPN();
+    RPN(const RPN&);
+    RPN& operator=(const RPN&);
+    ~RPN();
 
 };
 

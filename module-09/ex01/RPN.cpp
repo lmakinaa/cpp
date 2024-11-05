@@ -14,7 +14,6 @@ static int doOperation(int operand1, int operand2, char op) {
                 throw std::runtime_error("Invalid RPN expression: division by 0");
             return operand1 / operand2;
         default:
-            DEBUG && std::cout << '|' << operand1 << " " << op << " " << operand2 << "|\n";
             throw std::runtime_error("Invalid RPN expression: invalid operator");
     }
 }
@@ -37,7 +36,6 @@ int RPN::evaluate(std::string expression)
 
     char tmp;
     ss >> tmp;
-    DEBUG && std::cout << tmp << '\n';
 
     if (!std::isdigit(tmp))
         throw std::runtime_error("Invalid RPN expression: first number isn't a digit");
@@ -51,7 +49,6 @@ int RPN::evaluate(std::string expression)
         if (ss.peek() != ' ' && ss.peek() != EOF)
             throw std::runtime_error("Invalid RPN expression: first number isn't a digit");
 
-        DEBUG && std::cout << "|" << tmp << "|\n";
         if (std::isdigit(tmp)) {
             buff.push(tmp - '0');
         } else {
@@ -62,11 +59,7 @@ int RPN::evaluate(std::string expression)
             int n1 = buff.top();
             buff.pop();
 
-
             buff.push(doOperation(n1, n2, tmp));
-            DEBUG && std::cout << "result: " << buff.top() << std::endl;
-    // std::cerr << buff.size() << '\n';
-    //         DEBUG && std::cout << buff.top() << std::endl;
         }
     }
     if (buff.size() != 1)
@@ -74,3 +67,11 @@ int RPN::evaluate(std::string expression)
     
     return buff.top();
 }
+
+RPN::RPN() {}
+
+RPN::RPN(const RPN&) {}
+
+RPN& RPN::operator=(const RPN&) {}
+
+RPN::~RPN() {}
