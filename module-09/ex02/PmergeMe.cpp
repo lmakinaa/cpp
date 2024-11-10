@@ -42,26 +42,27 @@ void PmergeMe::sort(std::vector<int>& v)
     std::vector<int> mainVec((v.size() / 2) + 1);
     std::vector<int> pendVec((v.size() / 2) - 1);
 
-    // merge sort
+    // merge sort O(N/2)
     for (it = v.begin(); it < v.end(); it += 2) {
         if (*it < *(it + 1))
             std::swap(*it, *(it + 1));
     }
 
-    //insertion sort
+    // insertion sort O(N^2 / 2) = O(N^2)
     for (it = v.begin() + 2; it < v.end(); it += 2) {
         int k = *it;
         int kp = *(it + 1);
         std::vector<int>::iterator j = it - 2;
 
         for (; j >= v.begin() && k < *j; j -= 2) {
-                *(j + 2) = *j;
-                *(j + 3) = *(j + 1);
+            *(j + 2) = *j;
+            *(j + 3) = *(j + 1);
         }
         *(j + 2) = k;
         *(j + 3) = kp;
     }
 
+    // seperating the two chains O(N / 2)
     int tmp1 = 0, tmp2 = 0;
     for (it = v.begin(); it < v.end(); it += 2) {
         
@@ -74,7 +75,7 @@ void PmergeMe::sort(std::vector<int>& v)
 
     std::vector<int> jacob = jacobsthalGen(pendVec.size());
 
-    // Inserting the pend vec elements into the main vec
+    // Inserting the pend vec elements into the main vec O(jacobSize * log(N))
     for (it = jacob.begin(); it != jacob.end(); it++) {
         if (*it > (int)pendVec.size() + 1)
             continue ;
@@ -96,7 +97,7 @@ void PmergeMe::sort(std::vector<int>& v)
         mainVec.insert(j, solo);
     }
     
-    v = std::move(mainVec);
+    PmergeMe::printContainer(std::cout, mainVec, true);
 }
 
 static std::list<int>::iterator listAccess(std::list<int>::iterator it, long n)
@@ -181,8 +182,7 @@ void PmergeMe::sort(std::list<int>& v)
         j = std::lower_bound(mainVec.begin(), mainVec.end(), solo);
         mainVec.insert(j, solo);
     }
-    
-    v = std::move(mainVec);
+
 }
 
 bool PmergeMe::isValidNumber(std::string str)

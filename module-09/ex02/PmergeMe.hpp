@@ -9,6 +9,7 @@
 #include <exception>
 #include <ctime>
 #include <iomanip>
+#include <climits>
 
 class PmergeMe
 {
@@ -33,7 +34,7 @@ public:
     }
 
     template<typename T>
-    static std::ostream& printContainer(std::ostream &out, T &val, bool& print) { 
+    static std::ostream& printContainer(std::ostream &out, T &val, bool print) { 
         typename T::iterator it;
 
         print && out << "After: ";
@@ -41,7 +42,6 @@ public:
             print && out << *it << " ";
 
         print && out << std::endl;
-        print = false;
         return (out);
     }
 

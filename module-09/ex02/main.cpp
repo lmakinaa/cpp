@@ -10,7 +10,7 @@ int main(int ac, char **av)
     try {
 
         for (int i = 1; i < ac; i++) {
-            if (!PmergeMe::isValidNumber(av[i]))
+            if (!PmergeMe::isValidNumber(av[i]) || std::atol(av[i]) > INT_MAX)
                 throw std::runtime_error("invalid argument");
         }
 
@@ -19,16 +19,16 @@ int main(int ac, char **av)
         bool print = true;
 
         std::clock_t start1 = std::clock();
-        intVec.reserve(ac);
-        PmergeMe::fillContainer(av, ac, intVec, print);
+        intVec.reserve(ac); // O(1)
+        PmergeMe::fillContainer(av, ac, intVec, print); // O(N)
         PmergeMe::sort(intVec);
-        PmergeMe::printContainer(std::cout, intVec, print);
         std::clock_t end1 = std::clock();
+
+        print = false;
 
         std::clock_t start2 = std::clock();
         PmergeMe::fillContainer(av, ac, intList, print);
         PmergeMe::sort(intList);
-        PmergeMe::printContainer(std::cout, intList, print);
         std::clock_t end2 = std::clock();
         
         std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector : " << (end1 - start1) / 1000.0 << "ms" << std::endl;
