@@ -22,10 +22,9 @@ std::vector<int> jacobsthalGen(int vecSize) {
     return newJabocSeq;
 }
 
-void PmergeMe::sortVector(std::vector<int>& v)
+void PmergeMe::sort(std::vector<int>& v)
 {
     if (v.size() < 3) {
-        if (v.size() == 1) return;
         if (v.size() == 2){
             if (v[0] > v[1]) std::swap(v[0], v[1]);
         }
@@ -90,6 +89,92 @@ void PmergeMe::sortVector(std::vector<int>& v)
             mainVec = std::move(tmp);
         } else {
             mainVec.insert(j, pendVec[*it - 2]);
+        }
+    }
+    if (solo != -1) {
+        j = std::lower_bound(mainVec.begin(), mainVec.end(), solo);
+        mainVec.insert(j, solo);
+    }
+    
+    v = std::move(mainVec);
+}
+
+static std::list<int>::iterator listAccess(std::list<int>::iterator it, long n)
+{
+    std::advance(it, n);
+    return it;
+}
+
+void PmergeMe::sort(std::list<int>& v)
+{
+    if (v.size() < 3) {
+        if (v.size() == 2){
+            if (v.front() > v.back()) std::swap(v.front(), v.back());
+        }
+        return ;
+    };
+
+    std::list<int>::iterator it;
+    std::list<int>::iterator j;
+    int solo = -1;
+    if (v.size() % 2) {
+        solo = v.back();
+        v.pop_back();
+    }
+
+    std::list<int> mainVec((v.size() / 2) + 1);
+    std::list<int> pendVec((v.size() / 2) - 1);
+
+    // merge sort
+    for (it = v.begin(); it != v.end(); std::advance(it, 2)) {
+        if (*it < *listAccess(it, 1))
+            std::swap(*it, *listAccess(it, 1));
+    }
+
+    //insertion sort
+    for (it = listAccess(v.begin(), 2); it != v.end(); std::advance(it, 2)) {
+        int k = *it;
+        int kp = *listAccess(it, 1);
+        std::list<int>::iterator j = listAccess(it, -2);
+
+        while (k < *j) {
+            *listAccess(j, 2) = *j;
+            *listAccess(j, 3) = *listAccess(j, 1);
+            if (j == v.begin())
+                break ;
+            std::advance(j, -2);
+        }
+        *listAccess(j, 2) = k;
+        *listAccess(j, 3) = kp;
+    }
+
+    int tmp1 = 0, tmp2 = 0;
+    for (it = v.begin(); it != v.end(); std::advance(it, 2)) {
+        
+        if (it == v.begin())
+            *listAccess(mainVec.begin(), tmp1) = (*listAccess(it, 1)), tmp1++;
+        else
+            *listAccess(pendVec.begin(), tmp2) = (*listAccess(it, 1)), tmp2++;
+        *listAccess(mainVec.begin(), tmp1) = (*it), tmp1++;
+    }
+
+    std::vector<int> jacob = jacobsthalGen(pendVec.size());
+
+    // Inserting the pend vec elements into the main vec
+    for (std::vector<int>::iterator vecIt = jacob.begin(); vecIt != jacob.end(); vecIt++) {
+        if (*vecIt > (int)pendVec.size() + 1)
+            continue ;
+        j = std::lower_bound(mainVec.begin(), mainVec.end(), *listAccess(pendVec.begin(), *vecIt - 2));
+        if (j == mainVec.end())
+            mainVec.push_back(*listAccess(pendVec.begin(), *vecIt - 1));
+        else if (j == mainVec.begin()) {
+            std::list<int> tmp;
+            tmp.push_back(*listAccess(pendVec.begin(), *vecIt - 2));
+            tmp.front() = *listAccess(pendVec.begin(), *vecIt - 2);
+            tmp.insert(listAccess(tmp.begin(), 1), mainVec.begin(), mainVec.end());
+            mainVec = std::move(tmp);
+        } else {
+            mainVec.insert(j, *listAccess(pendVec.begin(), *vecIt - 2));
         }
     }
     if (solo != -1) {
