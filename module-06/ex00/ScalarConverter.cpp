@@ -35,7 +35,7 @@ void ScalarConverter::convert(std::string literal)
 					std::cout << "float: ";
 					{float tmp = std::stof(literal);
 					std::cout << tmp;
-					if (static_cast<float>((int) tmp) == tmp)
+					if (static_cast<float>(static_cast<int> (tmp)) == tmp)
 						std::cout << ".0";}
 					std::cout << 'f';
 					break;
@@ -43,7 +43,7 @@ void ScalarConverter::convert(std::string literal)
 					std::cout << "double: ";
 					{double tmp = std::stod(literal);
 					std::cout << tmp;
-					if (static_cast<double>((int) tmp) == tmp)
+					if (static_cast<double>(static_cast<int> (tmp)) == tmp)
 						std::cout << ".0";}
 				}
 			} catch (std::invalid_argument &e) {
